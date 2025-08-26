@@ -1,42 +1,30 @@
-# 🔎 Mini Search (DuckDuckGo + Streamlit)
+# 🔎 Tanzil Search — Mini Search Engine 2.0
 
-A deploy-ready, free search engine prototype using **DuckDuckGo Search** and **Streamlit**.
-No API key needed.
+Upgrades included:
+- Dark theme (Google-like) via `.streamlit/config.toml`
+- Branding/header
+- Tabs: Web, Images, News, Videos
+- Pagination (10 per page default, adjustable)
+- Better result cards with favicons
+- Search history (last 5) in sidebar
+- Mobile-friendly layout
 
-## ✨ Features
-- Web results (title, snippet, link, source host)
-- Image results (grid with source links)
-- Region, SafeSearch, time filter, and max results controls
-- Caching for fast repeated queries (Streamlit `@st.cache_data`)
-
-## 🧱 Tech
-- Python, Streamlit
-- [`duckduckgo-search`](https://pypi.org/project/duckduckgo-search/)
-
-## 🚀 Run locally
+## Run locally
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## ☁️ Deploy to Streamlit Cloud (Community)
-1. Push these files to a public GitHub repo (root should have `app.py` and `requirements.txt`).
-2. Go to https://share.streamlit.io/ and connect your repo.
-3. Select branch and `app.py` as the entrypoint. Deploy!
+## Deploy to Streamlit Cloud
+- Push these files to your GitHub repo root.
+- New app → pick repo → Branch `main` → Main file `app.py` → Deploy.
 
-## 🔧 Options
-- **Region**: `wt-wt` (worldwide), `us-en`, `uk-en`, etc.
-- **SafeSearch**: `off`, `moderate`, `strict`
-- **Time limit**: `d`/`w`/`m`/`y` for results from last day/week/month/year.
-
-## 📁 Project structure
+## Files
 ```
 .
 ├── app.py
 ├── requirements.txt
+├── .streamlit/
+│   └── config.toml
 └── README.md
 ```
-
-## ⚠️ Notes
-- DuckDuckGo results are fetched via the `duckduckgo-search` library. It may have rate limits. If you hit errors, wait a bit and try again.
-- This is a learning prototype (not Google-scale). You can extend it with your own crawler/indexer later.
